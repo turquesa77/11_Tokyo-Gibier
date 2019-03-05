@@ -1,0 +1,77 @@
+# 「http」と「https」を切り分けてリダイレクト
+RewriteEngine on
+RewriteBase /
+
+
+#出展料金（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/cost.html http://www.jma.or.jp/ai/gm/exhibit/fee.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/cost.html https://www.jma.or.jp/ai/gm/exhibit/fee.php [R=301,L]
+
+#お申込みから会期までの流れ（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/flow.html http://www.jma.or.jp/ai/gm/exhibit/schedule.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/flow.html https://www.jma.or.jp/ai/gm/exhibit/schedule.php [R=301,L]
+
+#出展対象と来場対象（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/index.html http://www.jma.or.jp/ai/gm/exhibit/target.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/index.html https://www.jma.or.jp/ai/gm/exhibit/target.php [R=301,L]
+
+#出展対象と来場対象（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/target.html http://www.jma.or.jp/ai/gm/exhibit/target.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/target.html https://www.jma.or.jp/ai/gm/exhibit/target.php [R=301,L]
+
+#出展オプションのご案内（ディレクトリ削除）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/option.html http://www.jma.or.jp/ai/gm/exhibit/fee.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/option.html https://www.jma.or.jp/ai/gm/exhibit/fee.php [R=301,L]
+
+#ジビエ展とは（拡張子変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^outline/index.html http://www.jma.or.jp/ai/gm/outline/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^outline/index.html https://www.jma.or.jp/ai/gm/outline/index.php [R=301,L]
+
+#ロゴ・バナーダウンロード（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^press/dl.html http://www.jma.or.jp/ai/gm/press/download.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^press/dl.html https://www.jma.or.jp/ai/gm/press/download.php [R=301,L]
+
+#取材について（拡張子変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^press/index.html http://www.jma.or.jp/ai/gm/press/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^press/index.html https://www.jma.or.jp/ai/gm/press/index.php [R=301,L]
+
+#ニュースリリース（拡張子変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^press/release.html http://www.jma.or.jp/ai/gm/press/release.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^press/release.html https://www.jma.or.jp/ai/gm/press/release.php [R=301,L]
+
+#セミナープログラム（準備中）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^seminar/index.html http://www.jma.or.jp/ai/gm/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^seminar/index.html https://www.jma.or.jp/ai/gm/$1 [R=301,L]
+
+#特別企画（準備中）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^seminar/planning.html http://www.jma.or.jp/ai/gm/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^seminar/planning.html https://www.jma.or.jp/ai/gm/$1 [R=301,L]
+
+#来場するには（拡張子変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^visit/index.html http://www.jma.or.jp/ai/gm/visit/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^visit/index.html https://www.jma.or.jp/ai/gm/visit/index.php [R=301,L]
+
